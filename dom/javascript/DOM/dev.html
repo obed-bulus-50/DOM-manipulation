@@ -1,0 +1,267 @@
+
+Navigation Menu
+Platform
+Solutions
+Resources
+Open Source
+Enterprise
+Pricing
+
+Sign in
+Sign up
+ultimatefaloe
+/
+devfolio
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security and quality
+Insights
+Name		
+ 
+css
+ 
+ 
+js
+ 
+ 
+README.md
+ 
+ 
+blog.html
+ 
+ 
+contact.html
+ 
+ 
+index.html
+ 
+ 
+projects.html
+ 
+ 
+Repository files navigation
+README
+DevFolio — Front-End Developer Course
+Build a real personal portfolio website while learning HTML, CSS, and JavaScript from scratch.
+
+About This Course
+Instructor: ULTIMATE
+Contact: ultimatefaloe@gmail.com
+Level: Beginner → Intermediate
+Method: Build-Along — every concept is immediately applied to a real project
+
+This is not a passive reading course. Every topic you learn is applied directly to DevFolio — a fully responsive, interactive personal portfolio website. By the time you finish, you will have a professional website you can show to clients and employers.
+
+What You Will Build
+DevFolio — a 4-page personal portfolio website:
+
+Page	File	What It Does
+Home	index.html	Hero section, About, Skills
+Projects	projects.html	Projects grid with filter buttons
+Blog	blog.html	Blog posts loaded from a live API
+Contact	contact.html	Contact form with validation
+Tools You Need
+A code editor — VS Code (free at code.visualstudio.com)
+VS Code extension — Live Server (right-click your HTML file → "Open with Live Server")
+A modern browser — Chrome or Firefox
+No installations, no frameworks, no command line — just a text editor and a browser
+Project File Structure
+devfolio/
+├── index.html          ← Home page
+├── projects.html       ← Projects page
+├── blog.html           ← Blog page
+├── contact.html        ← Contact page
+│
+├── css/
+│   ├── variables.css   ← CSS colour tokens and spacing values
+│   ├── global.css      ← Shared styles (navbar, buttons, footer)
+│   ├── home.css        ← Home page only
+│   ├── projects.css    ← Projects page only
+│   ├── blog.css        ← Blog page only
+│   └── contact.css     ← Contact page only
+│
+├── js/
+│   ├── main.js         ← Shared JavaScript (runs on every page)
+│   ├── projects.js     ← Projects data and card rendering
+│   └── blog.js         ← Fetch posts from the internet
+│
+└── assets/             ← Images and icons
+About the Creator
+ULTIMATE is a technology education company focused on practical, career-ready IT skills for students and young professionals in Nigeria and beyond. Our courses emphasise learning by doing — students build real projects from day one, not toy examples.
+
+Our front-end developer programme covers the three core languages of the web: HTML, CSS, and JavaScript. Graduates leave with a working portfolio website they built with their own hands, and the knowledge to build many more.
+
+📧 ultimatefaloe@gmail.com
+
+Course proeject
+https://ultimatefaloe.github.io/devfolio/
+
+Visit link for usage
+https://ultimatefaloe.github.io/frontend-development-fundamentals-v1/
+PART 1 — HTML
+What is HTML?
+HTML stands for HyperText Markup Language.
+
+When you type a web address into your browser, your computer sends a request to a server. The server responds with an HTML file. The browser reads that file and draws the page on your screen.
+
+HTML is not a programming language — it does not have logic or calculations. It simply describes structure and content.
+
+Think of HTML as the skeleton of a webpage:
+
+HTML = Structure (the bones)
+CSS = Appearance (the skin and clothes)
+JavaScript = Behaviour (the muscles and brain)
+How a Web Page Works
+You type a URL → Browser sends request → Server sends back HTML file
+→ Browser reads HTML → Browser draws the page
+Every website you have ever visited is built with HTML at its core.
+
+HTML Document Structure
+Every HTML file must start with this boilerplate:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title</title>
+</head>
+<body>
+  <!-- Everything visible goes here -->
+</body>
+</html>
+What each line means:
+
+Line	Purpose
+<!DOCTYPE html>	Tells the browser: this is an HTML5 document
+<html lang="en">	Root element. lang="en" helps screen readers and search engines
+<head>	Invisible metadata — title, links to CSS, character settings
+<meta charset="UTF-8">	Supports all characters including special symbols (é, ñ, ₦)
+<meta name="viewport" ...>	Makes the page work correctly on mobile screens
+<title>	Text shown in the browser tab
+<body>	Everything the user actually sees goes here
+In DevFolio we use:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevFolio | Alex — Front-End Developer</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  ...
+  <script src="js/main.js"></script>
+</body>
+</html>
+Tags, Elements, and Attributes
+Tags
+An HTML tag is a keyword wrapped in angle brackets: < >.
+
+Most tags come in pairs — an opening tag and a closing tag:
+
+<tagname>content goes here</tagname>
+Some tags are self-closing — they have no content inside:
+
+<img src="photo.jpg" alt="A photo">
+<br>
+<hr>
+<input type="text">
+Elements
+An element is the complete unit: the opening tag + content + closing tag.
+
+<p>This is a paragraph element.</p>
+Elements can be nested inside each other:
+
+<section>
+  <h2>About Me</h2>
+  <p>I love coding.</p>`
+</section>
+Attributes
+Attributes give extra information about an element. They go inside the opening tag:
+
+<tagname attribute="value">content</tagname>
+Examples:
+
+<a href="contact.html">Contact Me</a>
+<img src="assets/avatar.jpg" alt="Profile photo" width="300" height="300">
+<input type="email" id="email" required placeholder="you@example.com">
+<div class="hero-section" id="hero" data-reveal>
+Common attributes:
+
+Attribute	Purpose
+class	CSS styling target (can be shared by many elements)
+id	Unique identifier for one element (used in CSS and JS)
+href	Link destination (used on <a>)
+src	File source (used on <img>, <script>)
+alt	Alternative text for images (accessibility + SEO)
+type	Input field type (text, email, password, submit…)
+placeholder	Hint text inside an empty input
+required	Makes a form field mandatory
+data-*	Custom attributes you define (e.g. data-filter="all")
+target="_blank"	Opens link in a new tab
+rel="noopener"	Security: prevents the new tab from accessing your page
+Semantic HTML
+HTML5 introduced semantic tags — tags whose name describes the PURPOSE of their content, not just how it looks.
+
+Why Semantics Matter
+Search engines (Google) use them to understand your page
+Screen readers use them to help visually impaired users
+Other developers can read your code more easily
+Semantic vs Non-Semantic
+<!-- Non-semantic — says nothing about content -->
+<div class="header">
+  <div class="nav">...</div>
+</div>
+
+<!-- Semantic — self-describing -->
+<header>
+  <nav>...</nav>
+</header>
+Key Semantic Tags
+Tag	Meaning
+<header>	Top section of the page or a section — usually holds logo + navigation
+<nav>	Navigation links block
+<main>	The primary content of the page. Use only once per page
+<section>	A thematic group of content, usually with a heading
+<article>	Self-contained content (a blog post, a product card)
+<aside>	Content tangentially related to the main content (sidebar)
+<footer>	Bottom section — copyright, links, contact info
+<figure>	Wraps an image with its caption
+<figcaption>	Caption for a <figure>
+In DevFolio we use:
+
+<header id="site-header">      ← Fixed navigation bar
+  <nav id="main-nav">...</nav>
+</header>
+
+<main>
+  <section id="hero">...</section>
+  <section id="about">...</section>
+  <section id="skills">...</section>
+</main>
+
+<footer id="site-footer">...</footer>
+Headings
+HTML has six heading levels, from largest to smallest:
+
+<h1>Largest — use only once per page (main topic)</h1>
+<h2>Section heading</h2>
+<h3>Sub-section heading</h3>
+<h4>Sub-sub-section heading</h4>
+<h5>Rarely used</h5>
+<h6>Rarely used</h6>
+Rule: Use headings in order — never skip from <h1> to <h3>. Search engines and screen readers depend on this hierarchy.
+
+In DevFolio:
+
+<h1 class="hero-title">Hi, I'm <span class="highlight"> Alex</span></h1>
+<h2 class="section-title">About Me</h2>
+<h2 class="s

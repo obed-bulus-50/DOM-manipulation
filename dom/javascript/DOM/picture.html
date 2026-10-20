@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <button id="btn">add</button>
+    --<img class="img" src="./sonic-png-20637 (1).png" alt="this is sonic">
+    <button onclick="obt ()">display</button>
+    
+    <div id="contain"></div>
+    <script>
+        function obt(){
+            const img = document.querySelector('.img');
+            img.setAttribute("src","./sonic-png-20637");
+            img.setAttribute('alt','fail to load');
+        }
+       /* (function (){
+            let count = 0;
+            const btn = document.getElementById('btn').addEventListener('click', function(){
+                count ++;
+                const p = document.createElement('p')
+                p.textContent = `new paragraph ${count}.`;
+                document.getElementById(' contain').appendChild(p)
+            })
+
+            
+        })();
+        
+        const obt = document.querySelector('.obt').addEventListener('DOMContentLoaded', (even)=>{
+            console.log('im obed else son of bulus');
+        });*/
+
+    </script>
+
+</body>
+</html>

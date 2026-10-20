@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            align-items: center;
+            width: 9px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <h1 id="output">print array</h1>
+    <button class="btn">click</button>
+
+    <form action="">
+        <input type="text"
+        name="text"
+        id="text">
+
+        <input type="password"
+        name="pass" id="pass"
+        placeholder="123">
+    </form>
+    <button class="bon"> new</button>
+    <div class="contain"></div>
+    <script>
+        
+        const form = document.querySelector('form');
+
+
+        const head = document.getElementById('output');
+        head.style.color='red';
+        head.textContent='legend';
+        head.innerHTML='obed';
+        const btn = document.querySelector('button');
+        btn.classList.add('jos');
+        
+
+
+        const input = document.querySelector('input');
+        input.type='text';
+        input.name ='name';
+        input.id = 'name';
+        input.placeholder ='enter your name';
+
+        const pass = document.getElementById('pass');
+        pass.type = 'date';
+        pass.style.color = 'red';
+        //prepend is use to move an item the start or beginig
+        // it can also be use add an item by using string ("come")
+        form.prepend(pass,);
+
+        //append is use to move an item to the end
+        form.append(pass);
+
+
+        let button = document.querySelector('.btn')
+        button.addEventListener('click', function(){
+            alert('welcome to my web page');
+        });
+        input.getAttribute('class','password');
+        
+        
+        
+    
+
+    </script>
+    
+</body>
+</html>

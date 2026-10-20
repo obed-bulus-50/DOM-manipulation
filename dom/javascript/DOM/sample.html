@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline CSS with Class and JavaScript</title>
+</head>
+<body>
+
+    <!-- Element with inline CSS and a class name -->
+    <p class="highlight-text" style="color: blue; font-size: 20px; font-weight: bold;">
+        Hello, this is styled with inline CSS!
+    </p>
+
+    <button onclick="changeTextStyle()">Change Style with JavaScript</button>
+
+    <script>
+        // Function to access the element by class name and change its style
+        function changeTextStyle() {
+            try {
+                // Get the first element with the class 'highlight-text'
+                const element = document.querySelector('.highlight-text');
+                
+                if (!element) {
+                    console.error("Element with class 'highlight-text' not found.");
+                    return;
+                }
+
+                // Change style using JavaScript
+                element.style.color = "red";
+                element.style.backgroundColor = "yellow";
+                element.style.fontSize = "24px";
+                element.textContent = "Style changed by JavaScript!";
+            } catch (error) {
+                console.error("An error occurred:", error);
+            }
+        }
+    </script>
+
+</body>
+</html>
+How it works:
+Inline CSS is applied directly in the style attribute of the <p> tag.
+The element also has a class name (highlight-text).
+In JavaScript, document.querySelector('.highlight-text') selects the element by class.
+The changeTextStyle() function modifies its style dynamically when the button is clicked.
+If you want, I can also show you a version where multiple elements share the same class and JavaScript changes all of them at once.
+Do you want me to prepare that?
+
+//In JavaScript, the document object is the main entry point to the HTML Document Object Model (DOM).
+
+It represents the entire web page loaded in the browser and allows you to access, modify, and interact with the page’s content and structure.
+
+Main Functions of document
+Access HTML Elements
+You can select elements to read or change them:
+
+

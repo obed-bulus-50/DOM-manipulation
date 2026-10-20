@@ -1,0 +1,174 @@
+HTML Events
+1
+2
+3
+HTML events are actions or occurrences that happen in the browser, often triggered by
+ user interaction or browser behavior, which can be handled using JavaScript. They 
+ allow developers to make web pages interactive by responding to actions like clicks,
+  key presses, form submissions, or media playback.
+
+Types of Events include:
+
+Window events: onload, onresize, onbeforeunload
+
+Form events: onchange, onsubmit, onfocus, oninput
+
+Keyboard events: onkeydown, onkeyup, onkeypress
+
+Mouse events: onclick, ondblclick, onmouseover, onmouseout
+
+Drag events: ondragstart, ondrop, ondragover
+
+Clipboard events: oncopy, onpaste
+
+Media events: onplay, onpause, onended
+
+Miscellaneous: ontoggle for <details> elements.
+
+Example: Inline Event Attribute
+<button onclick="alert('Button clicked!')">Click Me</button>
+
+
+While this works, inline event handlers are discouraged because they mix
+ HTML and JavaScript, making code harder to maintain.
+
+Example: Using addEventListener() (Best Practice)
+<button id="myBtn">Click Me</button>
+<script>
+document.getElementById("myBtn").addEventListener("click", function() {
+   alert("Button clicked!");
+});
+</script>
+
+Advantages: Allows multiple listeners for the same event, keeps HTML clean, and improves maintainability.
+
+Example: Preventing Default Behavior
+<form id="myForm">
+ <input type="text" id="name" placeholder="Enter name">
+ <button type="submit">Submit</button>
+</form>
+<script>
+document.getElementById("myForm").addEventListener("submit", function(e) {
+   if (document.getElementById("name").value === "") {
+       e.preventDefault(); // Stops form submission
+       alert("Name is required!");
+   }
+});
+</script>
+
+Here, preventDefault() stops the form from submitting if validation fails.
+
+Best Practices
+
+Use external JavaScript instead of inline attributes for cleaner separation of structure and behavior.
+
+Prefer addEventListener() over event properties like onclick for flexibility.
+
+Remove listeners with removeEventListener() when no longer needed to improve performance.
+
+Would you like me to also include event bubbling and capturing so you understand how events propagate in HTML? That’s crucial for advanced event handling.
+
+
+
+Hide
+In JavaScript, an event is an action or occurrence that happens in the browser, which your code can respond to.
+
+Events can be triggered by:
+
+User interactions (e.g., clicking a button, typing in a text box, moving the mouse)
+Browser actions (e.g., page load, resizing the window, network requests completing)
+When an event occurs, the browser can notify your JavaScript code so you can run specific functions in response — this is called event handling.
+
+Common Examples of Events
+Event Name	Triggered When...
+click	User clicks an element
+mouseover	Mouse pointer moves over an element
+keydown	A key is pressed down
+keyup	A key is released
+submit	A form is submitted
+load	Page or resource finishes loading
+resize	Browser window is resized
+
+//DOM CONTENT LOADED
+
+
+JavaScript DOMContentLoaded Event
+1
+2
+3
+The DOMContentLoaded event in JavaScript is triggered when the HTML document has been completely parsed, and all deferred scripts (<script defer src="..."> and <script type="module">) have been downloaded and executed. This event does not wait for other resources like images, subframes, and asynchronous scripts to finish loading.
+
+Basic Usage
+
+To use the DOMContentLoaded event, you can add an event listener using the addEventListener() method. Here is a basic example:
+
+document.addEventListener("DOMContentLoaded", (event) => {
+ console.log("DOM fully loaded and parsed");
+});
+
+
+In this example, the message "DOM fully loaded and parsed" will be logged to the console once the DOM is fully loaded.
+
+Delaying DOMContentLoaded
+
+If you have synchronous scripts that delay the parsing of the DOM, the DOMContentLoaded event will be delayed accordingly. For example:
+
+<script>
+ document.addEventListener("DOMContentLoaded", (event) => {
+   console.log("DOM fully loaded and parsed");
+ });
+ for (let i = 0; i < 1_000_000_000; i++); // This synchronous script delays DOM parsing
+</script>
+
+Checking if Loading is Complete
+
+Sometimes, the DOMContentLoaded event may fire before your script has a
+ chance to run. To handle this, you can check the
+  document's readyState property before adding the event listener:
+
+  function doSomething() {
+ console.info("DOM loaded");
+}
+if (document.readyState === "loading") {
+ // Loading hasn't finished yet
+ document.addEventListener("DOMContentLoaded", doSomething);
+} else {
+ // `DOMContentLoaded` has already fired
+ doSomething();
+}
+
+This ensures that your handler runs even if the DOMContentLoaded event has already fired.
+
+Practical Example
+
+Here is a practical example where a
+ button's click event is handled after the DOM is fully loaded:
+
+ <!DOCTYPE html>
+<html>
+<head>
+ <title>JS DOMContentLoaded Event</title>
+ <script>
+   document.addEventListener('DOMContentLoaded', () => {
+     let btn = document.getElementById('btn');
+     btn.addEventListener('click', () => {
+       console.log('clicked');
+     });
+   });
+ </script>
+</head>
+<body>
+ <button id="btn">Click Me!</button>
+</body>
+</html>
+
+
+In this example, the button's click event is set up within the DOMContentLoaded event handler to ensure that the button element is available in the DOM.
+
+Summary
+
+The DOMContentLoaded event is essential for executing JavaScript code
+ that interacts with the DOM as soon as it is fully loaded and parsed,
+  without waiting for other resources. This event is particularly useful
+   when placing JavaScript code in the head of the document but referencing
+    elements in the body.

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setAttribute & getAttribute Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        img {
+            max-width: 200px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            margin-right: 10px;
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript setAttribute() & getAttribute() Demo</h2>
+
+    <!-- Image element -->
+    <img id="myImage" src="https://via.placeholder.com/150" alt="Placeholder Image">
+
+    <!-- Buttons to trigger actions -->
+    <button onclick="changeImage()">Change Image</button>
+    <button onclick="showAltText()">Show Alt Text</button>
+
+    <!-- Output area -->
+    <p id="output"></p>
+
+    <script>
+        // Function to change the image source and alt text using setAttribute()
+        function changeImage() {
+            const img = document.getElementById("myImage");
+
+            // Change the 'src' attribute
+            img.setAttribute("src", "https://via.placeholder.com/200x150/ff7f7f/000000?text=New+Image");
+
+            // Change the 'alt' attribute
+            img.setAttribute("alt", "This is a new image");
+
+            document.getElementById("output").textContent = "Image attributes updated!";
+        }
+
+        // Function to get the alt text using getAttribute()
+        function showAltText() {
+            const img = document.getElementById("myImage");
+
+            // Get the 'alt' attribute value
+            const altText = img.getAttribute("alt");
+            
+
+            document.getElementById("output").textContent = "alt text update " + altText;
+        }
+    </script>
+
+</body>
+</html>
+How It Works:
+setAttribute(name, value)
+
+Changes or adds an attribute to an element.
+In the example, it changes the src and alt attributes of the <img> tag.
+getAttribute(name)
+
+Retrieves the value of a specified attribute.
+In the example, it reads the alt text of the image.
+Buttons
+
+Change Image → Updates the image source and alt text.
+Show Alt Text → Displays the current alt text in the <p> element.
+If you want, I can also make a version that toggles attributes dynamically so you can see both setAttribute and getAttribute in action without reloading the page.
+Do you want me to prepare that?
+
+

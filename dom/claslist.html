@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList.add() Example</title>
+    <style>
+        /* Default style */
+        #myBox {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            text-align: center;
+            line-height: 100px;
+            transition: all 0.3s ease;
+        }
+
+        /* Class to be added dynamically */
+        .highlight {
+            background-color: gold;
+            color: black;
+            font-weight: bold;
+            border: 2px solid orange;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript classList.add() Demo</h2>
+
+    <div id="myBox">Hello!</div>
+    <br>
+    <button id="addClassBtn">Add Highlight Class</button>
+
+    <script>
+        // Get references to the elements
+        const box = document.getElementById('myBox');
+        const button = document.getElementById('addClassBtn');
+
+        // Add click event listener to the button
+        button.addEventListener('click', function () {
+            // Add the 'highlight' class to the box
+            if (!box.classList.contains('highlight')) {
+                box.classList.add('highlight');
+            } else {
+                alert('Class already added!');
+            }
+        });
+    </script>
+
+</body>
+</html>
+How It Works:
+HTML:
+
+A <div> with id="myBox" is the target element.
+A <button> triggers the class addition.
+CSS:
+
+.highlight defines the style to be added dynamically.
+JavaScript:
+
+document.getElementById() gets the elements.
+classList.add('highlight') adds the class.
+classList.contains() checks if the class is already present to avoid duplicates.
+If you want, I can also give you an extended version that toggles the class on and off instead of just adding it.
+Do you want me to make that toggle version?
+
+

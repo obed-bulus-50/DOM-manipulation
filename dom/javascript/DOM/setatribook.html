@@ -1,0 +1,36 @@
+setAttribute in JavaScript
+1
+2
+3
+The setAttribute() method in JavaScript is used to add a new attribute or update
+ the value of an existing attribute on an HTML element. If the attribute doesn’t 
+ exist, it will be created automatically.
+
+Example: Setting a class and custom data attribute
+const element = document.getElementById('myDiv');
+// Set a standard attribute
+element.setAttribute('class', 'highlight');
+// Set a custom data attribute
+element.setAttribute('data-info', 'customValue');
+console.log(element.getAttribute('class')); // highlight
+console.log(element.getAttribute('data-info')); // customValue
+
+
+Basic Usage The syntax is:
+element.setAttribute(name, value);
+
+
+name: The attribute name (string).
+
+value: The value to assign (string or trusted type).
+
+If the attribute already exists, its value is updated; otherwise, it’s added to the element.
+
+Working with Boolean Attributes For boolean attributes like disabled or checked,
+ their presence means true. You can set them like:
+
+ button.setAttribute('disabled', ''); // or 'disabled'
+ To remove them:
+ button.removeAttribute('disabled');
+
+ 

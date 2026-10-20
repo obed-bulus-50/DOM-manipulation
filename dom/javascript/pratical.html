@@ -1,0 +1,93 @@
+
+    
+60
+ALL SEARCH IMAGES VIDEOS MAP SCOP ILOT MORE
+Here’s a complete, runnable HTML + JavaScript solution that meets all your requirements, including the bonus feature.
+
+Html
+
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Heading -->
+    <h1 id="mainHeading">Welcome!</h1>
+
+    <!-- Buttons -->
+    <button id="toggleBtn">Click Me</button>
+    <button id="addParaBtn">Add Paragraph</button>
+    <button id="clearBtn">Clear All</button>
+
+    <!-- Container for added paragraphs -->
+    <div id="paragraphContainer"></div>
+
+    <script>
+        // Get references to elements
+        const heading = document.getElementById('mainHeading');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const addParaBtn = document.getElementById('addParaBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const paragraphContainer = document.getElementById('paragraphContainer');
+
+        let isBgToggled = false; // Track background toggle state
+
+        // 1 & 2: Change h1 text and toggle background color
+        toggleBtn.addEventListener('click', () => {
+            heading.textContent = "Button was clicked!";
+            document.body.style.backgroundColor = isBgToggled ? "#ffffff" : "#f0f8ff";
+            isBgToggled = !isBgToggled;
+        });
+
+        // 4: Add a new paragraph each time button is clicked
+        addParaBtn.addEventListener('click', () => {
+            const newPara = document.createElement('p');
+            newPara.textContent = `This is paragraph ${paragraphContainer.children.length + 1}`;
+            paragraphContainer.appendChild(newPara);
+        });
+
+        // BONUS: Clear all added paragraphs
+        clearBtn.addEventListener('click', () => {
+            paragraphContainer.innerHTML = '';
+        });
+    </script>
+    <!--Features Implemented:
+<h1> and button — Displays "Welcome!" initially.
+Click event — Changes <h1> text to "Button was clicked!".
+Background toggle — Alternates between white and light blue on each click.
+Add Paragraph button — Appends a numbered <p> each time it’s clicked.
+Clear All button — Removes all dynamically added paragraphs instantly.
+If you want, I can extend this so that the background toggle cycles through multiple colors instead of just two.
+Do you want me to make that enhancement?-->
+
+
+<!--</script>
+<input type="button" value="Button 1" id="b1" onclick="changeText(this.value);"/>
+<input type="button" value="Button 2" id="b2" onclick="changeText(this.value);"/>
+<input type="button" value="Button 3" id="b3" onclick="changeText(this.value);"/>
+<p id="pText">Click on a Button</p>...
+</body>
+</html>-->
+    
+</body>
+</html>
